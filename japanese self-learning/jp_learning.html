@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日文單字抽考挑戰 (L6-L7)</title>
+    <link rel="stylesheet" href="jp_learning.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="quiz-card">
+            <div class="header">
+                <div id="progress">第 1 / 10 題</div>
+                <div class="score-board">得分: <span id="score">0</span></div>
+            </div>
+
+            <div class="quiz-body">
+                <div class="instruction">請選擇正確的日文：</div>
+                <div id="question" class="question-text">中文單字</div>
+                <div id="options" class="options-grid"></div>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+            <button id="next-btn" class="main-btn">下一題</button>
+        </div>
+
+        <div class="card" id="result-card" style="display: none;">
+            <h2>測驗結束！</h2>
+            <p id="final-score"></p>
+            <button onclick="location.reload()" class="main-btn" style="display: block; margin: 0 auto;">再考一次</button>
+        </div>
+    </div>
+    <script src="jp_learning.js"></script>
+</body>
+</html>
