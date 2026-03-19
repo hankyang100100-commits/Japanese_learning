@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日文單字抽考挑戰 (L6-L7)</title>
-    <link rel="stylesheet" href="jp_learning.css">
+    <title>日文學習助手 (L6-L8)</title>
+    <link rel="stylesheet" href="jp_version2.css">
 </head>
 <body>
     <div class="container">
-        <div class="card" id="quiz-card">
+        <div class="card" id="home-card">
+            <h1>日文學習助手</h1>
+            <p>L6 - L8 單字挑戰</p>
+            <div class="menu-grid">
+                <button class="menu-btn primary" onclick="startQuiz()">開始單字抽考</button>
+                <button class="menu-btn secondary" onclick="showNotebook()">查看錯題本</button>
+            </div>
+        </div>
+
+        <div class="card" id="quiz-card" style="display: none;">
             <div class="header">
+                <button class="back-btn" onclick="goHome()">← 返回</button>
                 <div id="progress">第 1 / 10 題</div>
                 <div class="score-board">得分: <span id="score">0</span></div>
             </div>
-
             <div class="quiz-body">
                 <div class="instruction">請選擇正確的日文：</div>
                 <div id="question" class="question-text">中文單字</div>
                 <div id="options" class="options-grid"></div>
             </div>
-
             <div id="feedback" class="feedback"></div>
             <button id="next-btn" class="main-btn">下一題</button>
+        </div>
+
+        <div class="card" id="notebook-card" style="display: none;">
+            <div class="header">
+                <button class="back-btn" onclick="goHome()">← 返回</button>
+                <h2>我的錯題本</h2>
+            </div>
+            <div id="notebook-list" class="notebook-list"></div>
+            <button class="main-btn" onclick="clearWrongHistory()" style="background: #dc3545; display: block; margin: 20px auto;">清空錯題紀錄</button>
         </div>
 
         <div class="card" id="result-card" style="display: none;">
             <h2>測驗結束！</h2>
             <p id="final-score"></p>
-            <button onclick="location.reload()" class="main-btn" style="display: block; margin: 0 auto;">再考一次</button>
+            <button onclick="goHome()" class="main-btn" style="display: block; margin: 0 auto;">回主選單</button>
         </div>
     </div>
-    <script src="jp_learning.js"></script>
+    <script src="jp_version2.js"></script>
 </body>
 </html>
